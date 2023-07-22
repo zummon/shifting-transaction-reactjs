@@ -3,7 +3,6 @@ import model from "./model";
 import { arng } from "./functions";
 import Form from "./Form";
 import Table from "./Table";
-import "./index.css";
 // styles
 
 export default function App() {
