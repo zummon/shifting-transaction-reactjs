@@ -1,8 +1,8 @@
 import React from "react";
-import model from "./model";
-import { arng } from "./functions";
-import Form from "./Form";
-import Table from "./Table";
+import model from "./lib/model";
+import { arng } from "./lib/functions";
+import Form from "./component/Form";
+import Table from "./component/Table";
 // styles
 
 export default function App() {
@@ -35,7 +35,7 @@ export default function App() {
       <Form {...formProps} />
       <Table {...tableProps} />
       <div className="text-center my-8">
-        <span className="font-bold bg-white hover:bg-gray-900 hover:text-white  px-4 py-2  transition ease-in-out duration-500">
+        <span className="bg-white px-4 py-2">
           Made by zummon (Teerapat Anantarattanachai)
         </span>
       </div>
