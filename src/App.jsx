@@ -1,12 +1,11 @@
-import React from "react";
+import { useReducer, useState } from "react";
 import model from "./lib/model";
 import { arng } from "./lib/functions";
 import Form from "./component/Form";
 import Table from "./component/Table";
-// styles
 
 export default function App() {
-  const [trans, setTrans] = React.useReducer(
+  const [trans, setTrans] = useReducer(
     (state, action) => {
       switch (action.type) {
         case "add": {
@@ -25,15 +24,12 @@ export default function App() {
     [model]
   );
 
-  const [form, setForm] = React.useState(model);
-
-  const formProps = { form, setForm, setTrans };
-  const tableProps = { setForm, trans, setTrans };
+  const [form, setForm] = useState(model);
 
   return (
     <>
-      <Form {...formProps} />
-      <Table {...tableProps} />
+      <Form form={form} setForm={setForm} setTrans={setTrans} />
+      <Table setForm={setForm} trans={trans} setTrans={setTrans} />
       <div className="text-center my-8">
         <span className="bg-white px-4 py-2">
           Made by zummon (Teerapat Anantarattanachai)
